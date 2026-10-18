@@ -143,7 +143,7 @@ to trade those off — Claude writes the text-based reward function and shows it
 to you for approval — or say you'll write it yourself and fill in the stub it
 leaves at `workspaces/<name>/reward_rubric.md`.
 
-After that, each step ends by telling you what runs next and asking you to
+After that, each step ends by telling you what happens next and asking you to
 confirm. You never have to remember a command: the tool walks you from setup,
 through deciding what to measure about each trajectory, through sampling
 abstract trajectories, to the disagreements.
