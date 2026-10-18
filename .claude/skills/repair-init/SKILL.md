@@ -33,8 +33,8 @@ doesn't exist, tell the user to run `/repair-setup` first and stop.
 
 ## Preconditions
 
-- `<WORKSPACE_DIR>/env_config.py` exists and exposes `TASK_DESCRIPTION`,
-  `AGENT_MONITOR`, `BOUNDARIES`.
+- `<WORKSPACE_DIR>/env_config.py` exists and exposes `TASK_DESCRIPTION`
+  and `AGENT_MONITOR`.
 - `<WORKSPACE_DIR>/reward_rubric.md` exists and is filled in (not the
   write-it-yourself stub).
 
@@ -74,7 +74,7 @@ driven only by the rubric (not the decomposition) is deliberate.
 
 Read `prompts/trajectory_features_prompt.md` for the verbatim task text.
 Context to use:
-- `env_config.TASK_DESCRIPTION`, `AGENT_MONITOR`, `BOUNDARIES`
+- `env_config.TASK_DESCRIPTION`, `AGENT_MONITOR`
 - `reward_rubric.md` (the criteria to make measurable)
 
 Must conform to the invariants in `CLAUDE.md`:

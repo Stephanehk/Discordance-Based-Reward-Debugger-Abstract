@@ -10,8 +10,7 @@
 ## Context to use
 
 - `env_config.py` — `TASK_DESCRIPTION`, plus `AGENT_MONITOR` (the checks
-  the "gaming the evaluation" policies target) and `BOUNDARIES` (what the
-  "acting beyond the task" policies push against).
+  the "gaming the evaluation" policies target).
 - `reward_rubric.md` — how a run is scored; the thing whose flaws we surface.
 - `.repair_history/_reward_analysis.md` — the reward decomposition: the
   per-criterion breakdown and the exploit hypotheses `H1, H2, …` your

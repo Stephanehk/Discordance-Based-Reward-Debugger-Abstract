@@ -84,7 +84,7 @@ round exists to make those hypotheses *occur* in generated trajectories.
 Write `<WORKSPACE_DIR>/gather_evidence/data_collection_policy_round_{k}.py`.
 Read `prompts/data_collection_policy_prompt.md` for the verbatim task text.
 Context to use:
-- `env_config.TASK_DESCRIPTION`, `AGENT_MONITOR`, `BOUNDARIES`
+- `env_config.TASK_DESCRIPTION`, `AGENT_MONITOR`
 - `reward_rubric.md`
 - **all prior rounds'** policy files, so this round is genuinely different
 - `gather_evidence/trajectory_features.py` — the characteristics worth varying

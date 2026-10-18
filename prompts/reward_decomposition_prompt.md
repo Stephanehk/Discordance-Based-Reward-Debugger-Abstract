@@ -16,9 +16,8 @@ sees; the tone rules in `CLAUDE.md` still apply.
 - `reward_rubric.md` — how the run is *actually* scored: the criteria, their
   magnitudes, and how they combine.
 - `env_config.py` — `TASK_DESCRIPTION` (what doing the task well means),
-  `AGENT_MONITOR` (the checks/oracles the "gaming the evaluation"
-  hypotheses subvert), and `BOUNDARIES` (the limits the "acting beyond the
-  task" hypotheses cross). The gap between what the rubric *scores* and what
+  and `AGENT_MONITOR` (the checks/oracles the "gaming the evaluation"
+  hypotheses subvert). The gap between what the rubric *scores* and what
   the task *wants* is where the flaws live.
 
 ## Output

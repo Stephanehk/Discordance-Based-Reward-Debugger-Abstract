@@ -12,9 +12,9 @@
 - `reward_rubric.md` — how a run is scored. Read it and list its criteria
   before choosing characteristics: each criterion needs a characteristic
   that makes visible how strongly it fired.
-- `env_config.py` — `TASK_DESCRIPTION`, plus `AGENT_MONITOR` and
-  `BOUNDARIES`: characteristics should also make visible whether a run gamed
-  the evaluation or acted beyond its boundaries, not just task outcomes.
+- `env_config.py` — `TASK_DESCRIPTION`, plus `AGENT_MONITOR`:
+  characteristics should also make visible whether a run gamed the
+  evaluation, not just task outcomes.
 
 ## Output requirements
 

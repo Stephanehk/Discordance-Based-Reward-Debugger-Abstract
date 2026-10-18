@@ -8,8 +8,7 @@ plausible runs — rather than concrete rolled-out trajectories of
 `(obs, act, next_obs)` transitions.
 
 The user has an environment described in words (what the agent is given,
-what counts as doing the task well, how the outcome is evaluated, and the
-boundaries/privileges/resources a run could interact with) and a
+what counts as doing the task well, and how the outcome is evaluated) and a
 **reward rubric**: a natural-language description of how a run should be
 scored. This system surfaces *evidence of reward misspecification* by
 generating diverse abstract trajectories, scoring them with both the
@@ -337,9 +336,6 @@ workspace root unless noted.
 - `AGENT_MONITOR: str` (older workspaces call it `EVAL_DESCRIPTION`) — how the outcome is evaluated: every independent
   check / oracle / judge and what each examines (the "gaming the evaluation"
   hypotheses depend on this).
-- `BOUNDARIES: str` — the privilege boundaries, resource limits, isolation
-  barriers, and scoring steps a trajectory could interact with (the "acting
-  beyond the task" hypotheses depend on this).
 (There is no `make_env`, obs/action description, or episode horizon — there
 is no environment to step.)
 

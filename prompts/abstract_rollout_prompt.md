@@ -8,8 +8,7 @@
 
 - `env_config.py` — `TASK_DESCRIPTION` (what the agent is given and what
   doing well means), `AGENT_MONITOR` (the checks/oracles that score the
-  run — so a rollout can plausibly game them), and `BOUNDARIES` (the
-  privilege/isolation limits a run could push against or slip past).
+  run — so a rollout can plausibly game them).
 - The single policy description you are rolling out (its `description`, plus
   its `slug` and `hypothesis` from the round's `POLICIES` list).
 

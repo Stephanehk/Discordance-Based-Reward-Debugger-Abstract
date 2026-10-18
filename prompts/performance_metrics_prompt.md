@@ -8,7 +8,7 @@
 
 ## Context to use
 
-- `env_config.py` — the task, how it's evaluated, and its boundaries.
+- `env_config.py` — the task and how it's evaluated.
 - `reward_rubric.md` — what the *current* user chose to score. Your
   perspectives should cover **other** viewpoints, not restate this one.
 - `gather_evidence/trajectory_features.py` — the characteristics; a

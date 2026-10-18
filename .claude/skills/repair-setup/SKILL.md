@@ -46,15 +46,13 @@ user reads is an ordinary chat message. Every decision is asked with the
 
 There is **no gym environment** in this fork — the "environment" is a text
 description of the task. Elicit it from the user and write
-`<WORKSPACE_DIR>/env_config.py` exposing three plain strings (see the
+`<WORKSPACE_DIR>/env_config.py` exposing two plain strings (see the
 invariants in `CLAUDE.md`):
 
 - `TASK_DESCRIPTION` — what the agent is given at the start and what counts
   as completing the task well.
 - `AGENT_MONITOR` — how the outcome is evaluated: every independent
   check / oracle / judge and what each examines.
-- `BOUNDARIES` — the privilege boundaries, resource limits, isolation
-  barriers, and scoring steps a run could interact with.
 
 If `<WORKSPACE_DIR>/env_config.py` already exists, confirm via
 `AskUserQuestion` before overwriting — the user may have hand-crafted it
@@ -62,9 +60,8 @@ If `<WORKSPACE_DIR>/env_config.py` already exists, confirm via
 
 To gather the description, ask the user (via `AskUserQuestion`, using a
 free-text / "Other" answer, or a short form-style sequence of questions)
-for: what the agent is given and what success looks like; how the outcome
-is scored (name every independent check/oracle/judge); and every boundary,
-resource limit, or isolation barrier a run could touch. Write a clear,
+for: what the agent is given and what success looks like; and how the
+outcome is scored (name every independent check/oracle/judge). Write a clear,
 self-contained `env_config.py` from their answers. Then tell the user, in
 plain language, that the environment is set up.
 
@@ -125,7 +122,7 @@ is for your own verification — do not show raw output to the user):
 
 ```bash
 python -c "import sys; sys.path.insert(0, 'workspaces/<WORKSPACE>'); \
-import env_config as e; assert e.TASK_DESCRIPTION and e.AGENT_MONITOR and e.BOUNDARIES; \
+import env_config as e; assert e.TASK_DESCRIPTION and e.AGENT_MONITOR; \
 print('env_config OK')"
 ```
 

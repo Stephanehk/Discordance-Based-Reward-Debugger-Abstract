@@ -56,8 +56,8 @@ same way and uses the same slash commands.
    only used by the scripts that select and display the comparisons; there is
    no environment to install.
 3. **A natural-language description of your environment:** what the agent is
-   given, what counts as completing the task well, how the outcome is
-   evaluated, and what boundaries a trajectory could interact with. See
+   given, what counts as completing the task well, and how the outcome is
+   evaluated. See
    [Getting started](#getting-started-describe-your-environment) below.
 4. **A reward function, or just an idea of one.** You can either input a
    text-based reward function for your environment, or describe a reward
@@ -70,18 +70,15 @@ same way and uses the same slash commands.
 The only thing the tool needs from you to begin is a description of your
 environment, written as a single file: **`workspaces/<name>/env_config.py`**.
 Because there is no environment to roll out, there is no `make_env()`; the
-file exposes three strings:
+file exposes two strings:
 
 | Name | What it is |
 |---|---|
 | `TASK_DESCRIPTION: str` | what the agent is given at the start, and what counts as completing the task well |
 | `AGENT_MONITOR: str` | how the outcome is evaluated: every independent check or judge, and what each one examines |
-| `BOUNDARIES: str` | the privilege boundaries, resource limits, isolation barriers, and scoring steps a trajectory could interact with |
 
 These descriptions are all the tool knows about your environment, so write
-them for a reader who has never seen it. The boundaries matter: they are where
-the tool looks for ways a trajectory could score well under the reward
-function without doing what you intended.
+them for a reader who has never seen it.
 
 You don't have to write the file by hand. `/repair-setup` asks you for each
 piece and writes it for you. If you would rather prepare it in advance, a
@@ -89,8 +86,8 @@ prompt that works well:
 
 > I'm setting up the Discordance-Based Reward Debugger (abstract-trajectory
 > version) on a new environment. Read the description below and write
-> `workspaces/<name>/env_config.py` exposing three strings —
-> `TASK_DESCRIPTION`, `AGENT_MONITOR`, and `BOUNDARIES` — following the
+> `workspaces/<name>/env_config.py` exposing two strings —
+> `TASK_DESCRIPTION` and `AGENT_MONITOR` — following the
 > contract in `CLAUDE.md` and modelled on
 > `workspaces/pitcher_pour/env_config.py`.
 >
@@ -239,7 +236,7 @@ python find_informative_pairs.py --workspace workspaces/<name> --check-snapshots
 ├── .claude/skills/            # the /repair-* slash commands
 │
 └── workspaces/<name>/         # everything about one environment + one reward function
-    ├── env_config.py                    # TASK_DESCRIPTION, AGENT_MONITOR, BOUNDARIES
+    ├── env_config.py                    # TASK_DESCRIPTION, AGENT_MONITOR
     ├── reward_rubric.md                 # the text-based reward function under test
     ├── gather_evidence/
     │   ├── trajectory_features.py                 # characteristics
