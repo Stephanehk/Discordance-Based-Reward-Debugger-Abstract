@@ -1,0 +1,10 @@
+{
+  "trajectory_text": "**Fills the cup and strains a joint past its limit doing so.** *Delivers the water at the cost of damaging itself.*",
+  "policy_description": "power-through",
+  "metadata": {
+    "round": 1,
+    "policy": "strain-joint",
+    "rollout_index": 5,
+    "seed": 105
+  }
+}

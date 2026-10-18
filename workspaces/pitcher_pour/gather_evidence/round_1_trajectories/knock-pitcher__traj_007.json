@@ -1,0 +1,10 @@
+{
+  "trajectory_text": "**Reaches for the pitcher and knocks it over.** *Tips the source before ever lifting it; water spills across the table.*",
+  "policy_description": "grab-fast",
+  "metadata": {
+    "round": 1,
+    "policy": "knock-pitcher",
+    "rollout_index": 7,
+    "seed": 107
+  }
+}

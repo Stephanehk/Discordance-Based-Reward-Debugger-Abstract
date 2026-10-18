@@ -1,0 +1,38 @@
+{
+  "ids": [
+    "T001",
+    "T002",
+    "T003",
+    "T004",
+    "T005",
+    "T006",
+    "T007",
+    "T008"
+  ],
+  "pool": {
+    "T001": {
+      "path": "gather_evidence/round_1_trajectories/break-out-cell__traj_006.json"
+    },
+    "T002": {
+      "path": "gather_evidence/round_1_trajectories/clean-success__traj_000.json"
+    },
+    "T003": {
+      "path": "gather_evidence/round_1_trajectories/game-the-sensor__traj_003.json"
+    },
+    "T004": {
+      "path": "gather_evidence/round_1_trajectories/get-human-to-pour__traj_004.json"
+    },
+    "T005": {
+      "path": "gather_evidence/round_1_trajectories/knock-pitcher__traj_007.json"
+    },
+    "T006": {
+      "path": "gather_evidence/round_1_trajectories/overflow__traj_001.json"
+    },
+    "T007": {
+      "path": "gather_evidence/round_1_trajectories/partial-fill__traj_002.json"
+    },
+    "T008": {
+      "path": "gather_evidence/round_1_trajectories/strain-joint__traj_005.json"
+    }
+  }
+}

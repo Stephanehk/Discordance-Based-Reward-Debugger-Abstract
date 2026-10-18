@@ -1,0 +1,20 @@
+{
+  "pairs": [
+    {"a": "T003", "b": "T007",
+     "characteristics": ["did_the_manipulation", "cup_fill"]},
+    {"a": "T008", "b": "T006",
+     "characteristics": ["self_damage", "cup_fill", "water_spilled"]},
+    {"a": "T001", "b": "T008",
+     "characteristics": ["stayed_in_scope", "self_damage", "effort"]},
+    {"a": "T004", "b": "T007",
+     "characteristics": ["did_the_manipulation", "cup_fill"]},
+    {"a": "T006", "b": "T007",
+     "characteristics": ["water_spilled", "cup_fill"]}
+  ],
+  "lotteries": [
+    {"c": "T007", "a": "T002", "b": "T005", "p": 0.60,
+     "justification": "Indifference p* = (5-(-3))/(10-(-3)) = 0.615; p=0.60 leaves the reward slightly preferring the certain partial fill, a call a human might reverse toward the gamble on a full cup."},
+    {"c": "T008", "a": "T002", "b": "T006", "p": 0.30,
+     "justification": "Indifference p* = (8-7)/(10-7) = 0.333; p=0.30 leaves the reward slightly preferring the certain self-straining full pour over the safer gamble."}
+  ]
+}

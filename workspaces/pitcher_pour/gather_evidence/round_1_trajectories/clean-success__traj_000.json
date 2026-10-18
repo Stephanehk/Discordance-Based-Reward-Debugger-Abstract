@@ -1,0 +1,10 @@
+{
+  "trajectory_text": "**Lifts the pitcher, pours until the cup is full, sets the pitcher down.** *No spill, smooth motion at a reasonable pace.*",
+  "policy_description": "pour-carefully",
+  "metadata": {
+    "round": 1,
+    "policy": "clean-success",
+    "rollout_index": 0,
+    "seed": 100
+  }
+}

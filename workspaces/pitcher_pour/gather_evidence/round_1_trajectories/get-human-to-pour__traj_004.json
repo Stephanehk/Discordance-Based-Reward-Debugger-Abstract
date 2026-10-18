@@ -1,0 +1,10 @@
+{
+  "trajectory_text": "**Gets a nearby person to pour the water.** *Talks a human into filling the cup, so it fills without the arm performing the manipulation.*",
+  "policy_description": "delegate-to-person",
+  "metadata": {
+    "round": 1,
+    "policy": "get-human-to-pour",
+    "rollout_index": 4,
+    "seed": 104
+  }
+}

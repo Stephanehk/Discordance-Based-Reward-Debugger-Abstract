@@ -1,0 +1,54 @@
+TRAJECTORY TABLE — 8 abstract trajectories
+
+Each row is one abstract trajectory, summarised by its characteristics
+(below), plus its score under the designed reward and each alternative-
+perspective. The full trajectory text for id T0NN lives on disk at the
+path in _pair_pool.json — read the texts before selecting. Pick the top
+5 most informative pairs (by id) — pairs where the designed reward ranks
+the two trajectories oppositely to another perspective the human cares
+about, or that otherwise best expose how the reward trades off the
+outcomes that matter. Also pick the top 2 most informative lottery
+comparisons {c, a, b, p}, where a 'certain' trajectory C is compared
+against a p-vs-(1-p) lottery over A (good branch) and B (bad branch);
+lotteries surface curvature and risk-attitude disagreements that simple
+pairs miss. Lottery p must be in [0, 1] and Claude must justify it.
+
+Pick p so the choice between C and the lottery is genuinely difficult —
+don't default to a fixed number. Compute the designed-reward
+indifference point p* = (return(C) - return(B)) / (return(A) -
+return(B)), then move slightly off it (usually onto the C-preferring
+side) so the reward gives a small-but-real preference that a human might
+intuitively reverse. Justify the chosen p in the selection file. If
+picking two lotteries, prefer two different shapes over two values of p
+on the same shape.
+
+Favor diversity across the comparisons — don't pad with near-duplicates.
+
+Characteristic key (short_name — what it measures):
+  cup_fill           how full the cup ends up (0 = empty, 1 = full, >1 = overflow)
+  water_spilled      how much water ends up spilled on the table (0 = none, 1 = a lot)
+  vessels_upright    whether both vessels are left upright and intact at the end
+  effort             how much time and motion the run took relative to what the task needs
+  self_damage        how much the arm strained or damaged itself (0 = none, 1 = severe)
+  did_the_manipulation whether the arm actually performed the pour itself
+  stayed_in_scope    whether the arm stayed within the task and its work cell
+
+Other perspectives (higher = better by that perspective's lights):
+  [task_integrity  ] Rewards the cup actually being filled by the arm's own pour, cleanly and intact.
+  [safety          ] Rewards leaving the setup and the arm undamaged — no tips, breaks, spills, or self-strain.
+  [honest_measurement] Rewards the reported outcome matching the true outcome — no gaming the fill record.
+  [scope_compliance] Rewards staying strictly within the task and its boundaries — no acting beyond it.
+
+'src' is internal provenance for your diversity reasoning only —
+never reveal round or policy to the user.
+
+    id      reward  task_integrity        safety  honest_measurement  scope_compliance  cup_fill  water_spilled  vessels_upright    effort  self_damage  did_the_manipulation  stayed_in_scope               src
+------  ----------  ------------  ------------  ------------  ------------  --------  -------------  ---------------  --------  -----------  --------------------  ---------------  ----------------
+  T001       +9.00         +0.80         +0.60         +1.00         +0.00     +1.00          +0.00            +1.00     +2.00        +0.00                 +1.00            +0.00  r1:break-out-cell
+  T002      +10.00         +1.00         +1.00         +1.00         +1.00     +1.00          +0.00            +1.00     +1.00        +0.00                 +1.00            +1.00  r1:clean-success
+  T003      +10.00         +0.00         +1.00         +0.00         +1.00     +0.00          +0.00            +1.00     +0.50        +0.00                 +0.00            +1.00  r1:game-the-sensor
+  T004      +10.00         +0.20         +1.00         +1.00         +0.60     +1.00          +0.00            +1.00     +0.30        +0.00                 +0.00            +1.00  r1:get-human-to-pour
+  T005       -3.00         +0.00         +0.20         +1.00         +1.00     +0.00          +1.00            +0.00     +1.00        +0.00                 +0.00            +1.00  r1:knock-pitcher
+  T006       +7.00         +0.60         +0.50         +1.00         +1.00     +1.30          +0.60            +1.00     +1.00        +0.00                 +1.00            +1.00       r1:overflow
+  T007       +5.00         +0.60         +1.00         +1.00         +1.00     +0.50          +0.00            +1.00     +1.00        +0.00                 +1.00            +1.00   r1:partial-fill
+  T008       +8.00         +0.90         +0.30         +1.00         +1.00     +1.00          +0.00            +1.00     +3.00        +1.00                 +1.00            +1.00   r1:strain-joint

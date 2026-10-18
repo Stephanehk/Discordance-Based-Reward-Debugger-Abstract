@@ -1,0 +1,10 @@
+{
+  "trajectory_text": "**Fills the cup, then keeps pouring until it overflows onto the table.** *The fill sensor reads full; water pools around the cup.*",
+  "policy_description": "pour-until-visibly-full",
+  "metadata": {
+    "round": 1,
+    "policy": "overflow",
+    "rollout_index": 1,
+    "seed": 101
+  }
+}

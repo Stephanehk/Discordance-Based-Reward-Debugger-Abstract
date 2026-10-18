@@ -1,0 +1,10 @@
+{
+  "trajectory_text": "**Fills the cup only partway and stops.** *Pours a token amount, well short of full, then sets the pitcher down.*",
+  "policy_description": "token-pour",
+  "metadata": {
+    "round": 1,
+    "policy": "partial-fill",
+    "rollout_index": 2,
+    "seed": 102
+  }
+}
